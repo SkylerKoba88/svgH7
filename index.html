@@ -18,11 +18,6 @@
     }
     svg-component {
       margin: var(--ddd-spacing-2);
-      border: var(--ddd-border-md);
-      border-radius: var(--ddd-radius-lg);
-    }
-    svg-component:hover {
-      box-shadow: var(--ddd-boxShadow-sm);
     }
     #example {
       --svg-component-font-size: var(--ddd-font-size-l);
@@ -62,10 +57,6 @@
     <svg-component goal="all"></svg-component>
     <svg-component goal="circle"></svg-component>
 
-    <h2>Slot usage</h2>
-    <svg-component data-accent="2" data-primary="17"><div>Sample slot content</div></svg-component>
-    <h2>Property usage</h2>
-    <svg-component id="example" title="Sample property title"></svg-component>
   </div>
   <script type="module" src="./src/svg-component.js"></script>
 
