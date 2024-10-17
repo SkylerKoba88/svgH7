@@ -36,7 +36,6 @@ export class svgComponent extends DDDSuper(LitElement) {
     this.label = "";
     //sets image default to the circle logo
     this.image = new URL(`../lib/svgs/goal-circle.svg`, import.meta.url).href;
-    this.fancy = false;
     this.color = '#FFFFFF';
     this.colorOnly = false;
     //defines the specific requirements for loading images
@@ -51,7 +50,6 @@ export class svgComponent extends DDDSuper(LitElement) {
       goal: {type: String, reflect: true},
       label: {type: String},
       image: {type: String},
-      imageSize: {type: Number},
       color: {type: String},
       colorOnly: {type: Boolean, reflect: true},
       loading: {type: String, reflect: true},
@@ -66,48 +64,27 @@ export class svgComponent extends DDDSuper(LitElement) {
         //making the display inline-flex to match that of the SDG website
         display: inline-flex;
         color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
+        //background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
         font-size: var(--svg-component-font-size, var(--ddd-font-size-s));
-        --un-svg-component-goal-1: '#e5243b';
-        --un-svg-component-goal-2: '#dda63a';
-        --un-svg-component-goal-3: '#4c9f38';
-        --un-svg-component-goal-4: '#c5192d';
-        --un-svg-component-goal-5: '#ff3a21';
-        --un-svg-component-goal-6: '#26bde2';
-        --un-svg-component-goal-7: '#fcc30b';
-        --un-svg-component-goal-8: '#a21942';
-        --un-svg-component-goal-9: '#fd6925';
-        --un-svg-component-goal-10: '#dd1367';
-        --un-svg-component-goal-11: '#fd9d24';
-        --un-svg-component-goal-12: '#bf8b2e';
-        --un-svg-component-goal-13: '#3f7e44';
-        --un-svg-component-goal-14: '#0a97d9';
-        --un-svg-component-goal-15: '#56c02b';
-        --un-svg-component-goal-16: '#00689d';
-        --un-svg-component-goal-17: '#19486a';
-
-
       }
       .wrapper {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
-        
       }
+      
       div {
         display: inline-flex;
         padding: 0px;
-        margin: 0;
-        width: 254px;
-      }
-      img {
-        width: 254px;
-      }
-      //adding a .color_only tag to style the div for when there is just a color displayed.
-      .color-only {
+        margin: 0px;
         width: 254px;
         height: 254px;
       }
+      img {
+        width: var(--svg-component-image-width, 254px);
+        height: var(--svg-component-image-height, 254px);
+      }
+
     `];
   }
   //updates the properties to their correct values according to the specific goals referenced in HTML
@@ -132,15 +109,15 @@ export class svgComponent extends DDDSuper(LitElement) {
       this.image = new URL(`../lib/svgs/goal-${this.goal}.svg`, import.meta.url).href;
       //must specify the indexed value in the array goalData to retrieve .name
       this.label = `${goalData[parseInt(this.goal) - 1].name}`;
-    }
+    } 
     }
   }
 
   render() {
     //renders only the color as a specified div if color_only is true
-    //I can't figure out why this isn't rendering properly. tried manually typing in colors: doesn't work
+    //Not sure why this div floats higher on the page than other divs
     if (this.colorOnly) {
-      return html `<div class='color-only' style="background-color: ${this.color}"></div>`;
+      return html `<div class='wrapper' style="background-color: ${this.color};"></div>`;
     }
 
     //regular render of each individual component
