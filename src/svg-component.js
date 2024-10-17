@@ -140,7 +140,7 @@ export class svgComponent extends DDDSuper(LitElement) {
     //renders only the color as a specified div if color_only is true
     //I can't figure out why this isn't rendering properly. tried manually typing in colors: doesn't work
     if (this.colorOnly) {
-      return html `<div class='color-only' style="background-color: ${this.color}"></div>`
+      return html `<div class='color-only' style="background-color: ${this.color}"></div>`;
     }
 
     //regular render of each individual component
