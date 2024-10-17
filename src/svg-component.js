@@ -92,6 +92,7 @@ export class svgComponent extends DDDSuper(LitElement) {
       .wrapper {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
+        
       }
       div {
         display: inline-flex;
@@ -104,8 +105,8 @@ export class svgComponent extends DDDSuper(LitElement) {
       }
       //adding a .color_only tag to style the div for when there is just a color displayed.
       .color-only {
-        width: 100%;
-        height: 100%;
+        width: 254px;
+        height: 254px;
       }
     `];
   }
@@ -139,7 +140,7 @@ export class svgComponent extends DDDSuper(LitElement) {
     //renders only the color as a specified div if color_only is true
     //I can't figure out why this isn't rendering properly. tried manually typing in colors: doesn't work
     if (this.colorOnly) {
-      return html `<div class='color-only' style="background-color: var(--un-svg-component-goal-${this.goal})"></div>`
+      return html `<div class='color-only' style="background-color: ${this.color}"></div>`
     }
 
     //regular render of each individual component
