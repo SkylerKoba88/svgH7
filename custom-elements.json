@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/svg-component.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "svgComponent",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "haxProperties",
+              "static": true,
+              "description": "haxProperties integration via file reference"
+            },
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "privacy": "public",
+              "attribute": "title"
+            },
+            {
+              "kind": "field",
+              "name": "goal",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"circle\"",
+              "privacy": "public",
+              "attribute": "goal",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "privacy": "public",
+              "attribute": "label"
+            },
+            {
+              "kind": "field",
+              "name": "image",
+              "privacy": "public",
+              "attribute": "image"
+            },
+            {
+              "kind": "field",
+              "name": "fancy",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "color",
+              "type": {
+                "text": "string"
+              },
+              "default": "'#FFFFFF'",
+              "privacy": "public",
+              "attribute": "color"
+            },
+            {
+              "kind": "field",
+              "name": "colorOnly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "privacy": "public",
+              "attribute": "colorOnly",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "loading",
+              "type": {
+                "text": "string"
+              },
+              "default": "'lazy'",
+              "privacy": "public",
+              "attribute": "loading",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "fetchPriority",
+              "type": {
+                "text": "string"
+              },
+              "default": "'low'",
+              "privacy": "public",
+              "attribute": "fetchPriority",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "imageSize",
+              "privacy": "public",
+              "attribute": "imageSize"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "title",
+              "fieldName": "title"
+            },
+            {
+              "name": "goal",
+              "fieldName": "goal"
+            },
+            {
+              "name": "label",
+              "fieldName": "label"
+            },
+            {
+              "name": "image",
+              "fieldName": "image"
+            },
+            {
+              "name": "imageSize",
+              "fieldName": "imageSize"
+            },
+            {
+              "name": "color",
+              "fieldName": "color"
+            },
+            {
+              "name": "colorOnly",
+              "fieldName": "colorOnly"
+            },
+            {
+              "name": "loading",
+              "fieldName": "loading"
+            },
+            {
+              "name": "fetchPriority",
+              "fieldName": "fetchPriority"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "DDDSuper",
+              "package": "@haxtheweb/d-d-d/d-d-d.js"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "svgComponent",
+          "declaration": {
+            "name": "svgComponent",
+            "module": "src/svg-component.js"
+          }
+        }
+      ]
+    }
+  ]
+}

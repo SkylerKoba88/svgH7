@@ -35,7 +35,7 @@ export class svgComponent extends DDDSuper(LitElement) {
     this.goal = "circle";
     this.label = "";
     //sets image default to the circle logo
-    this.image = new URL(`../lib/svgs/circle.svg`, import.meta.url).href;
+    this.image = new URL(`../lib/svgs/goal-circle.svg`, import.meta.url).href;
     this.fancy = false;
     this.color = '#FFFFFF';
     this.colorOnly = false;
@@ -69,6 +69,25 @@ export class svgComponent extends DDDSuper(LitElement) {
         background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
         font-size: var(--svg-component-font-size, var(--ddd-font-size-s));
+        --un-svg-component-goal-1: '#e5243b';
+        --un-svg-component-goal-2: '#dda63a';
+        --un-svg-component-goal-3: '#4c9f38';
+        --un-svg-component-goal-4: '#c5192d';
+        --un-svg-component-goal-5: '#ff3a21';
+        --un-svg-component-goal-6: '#26bde2';
+        --un-svg-component-goal-7: '#fcc30b';
+        --un-svg-component-goal-8: '#a21942';
+        --un-svg-component-goal-9: '#fd6925';
+        --un-svg-component-goal-10: '#dd1367';
+        --un-svg-component-goal-11: '#fd9d24';
+        --un-svg-component-goal-12: '#bf8b2e';
+        --un-svg-component-goal-13: '#3f7e44';
+        --un-svg-component-goal-14: '#0a97d9';
+        --un-svg-component-goal-15: '#56c02b';
+        --un-svg-component-goal-16: '#00689d';
+        --un-svg-component-goal-17: '#19486a';
+
+
       }
       .wrapper {
         margin: var(--ddd-spacing-2);
@@ -84,7 +103,7 @@ export class svgComponent extends DDDSuper(LitElement) {
         width: 254px;
       }
       //adding a .color_only tag to style the div for when there is just a color displayed.
-      .color_only {
+      .color-only {
         width: 100%;
         height: 100%;
       }
@@ -118,13 +137,9 @@ export class svgComponent extends DDDSuper(LitElement) {
 
   render() {
     //renders only the color as a specified div if color_only is true
-    //I can't figure out why this isn't rendering properly
+    //I can't figure out why this isn't rendering properly. tried manually typing in colors: doesn't work
     if (this.colorOnly) {
-      const goalNum = parseInt(this.goal);
-      if (goalNum >= 1 && goalNum <= 17) {
-        const color = goalData[goalNum - 1].color;
-          return html `<div class='colorOnly' style="background-color: ${color}"></div>`
-      }
+      return html `<div class='color-only' style="background-color: var(--un-svg-component-goal-${this.goal})"></div>`
     }
 
     //regular render of each individual component
